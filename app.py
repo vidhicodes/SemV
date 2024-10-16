@@ -96,46 +96,17 @@ if input_img is not None:
             
             # Classification results and display corresponding SDG images
             if label == "0 cardboard":
-                st.success("The image is classified as CARDBOARD.")                
-                with col4:
-                    st.image("sdg goals/12.png", use_column_width=True)
-                    st.image("sdg goals/13.png", use_column_width=True)
-                with col5:
-                    st.image("sdg goals/14.png", use_column_width=True)
-                    st.image("sdg goals/15.png", use_column_width=True) 
+                st.success("The image is classified as CARDBOARD.")                 
             elif label == "1 metal":
                 st.success("The image is classified as METAL.")
-                with col4:
-                    st.image("sdg goals/3.png", use_column_width=True)
-                    st.image("sdg goals/6.jpg", use_column_width=True)
-                with col5:
-                    st.image("sdg goals/12.png", use_column_width=True)
-                    st.image("sdg goals/14.png", use_column_width=True) 
             elif label == "2 plastic":
                 st.success("The image is classified as PLASTIC.")
-                with col4:
-                    st.image("sdg goals/6.jpg", use_column_width=True)
-                    st.image("sdg goals/12.png", use_column_width=True)
-                with col5:
-                    st.image("sdg goals/14.png", use_column_width=True)
-                    st.image("sdg goals/15.png", use_column_width=True) 
             elif label == "3 glass":
                 st.success("The image is classified as GLASS.")
-                with col4:
-                    st.image("sdg goals/12.png", use_column_width=True)
-                with col5:
-                    st.image("sdg goals/14.png", use_column_width=True)
             elif label == "4 paper":
                 st.success("The image is classified as PAPER.")
-                with col4:
-                    st.image("sdg goals/12.png", use_column_width=True)
-                with col5:
-                    st.image("sdg goals/14.png", use_column_width=True)
             elif label == "5 compost":
                 st.success("The image is classified as COMPOST.")
-                with col4:
-                    st.image("sdg goals/13.png", use_column_width=True)
-                    st.image("sdg goals/15.png", use_column_width=True)
             else:
                 st.error("The image is not classified as any relevant class.")
 
