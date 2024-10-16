@@ -18,7 +18,7 @@ def load_keras_model():
     # Load the Keras model from the provided h5 file
     return load_model("keras_model.h5", compile=False)
 
-# Waste classification function
+# Waste classification function using Teachable Machine model
 def classify_waste(img):
     # Disable scientific notation for clarity
     np.set_printoptions(suppress=True)
@@ -92,20 +92,18 @@ if input_img is not None:
             image_file = Image.open(input_img)
             label, confidence_score = classify_waste(image_file)
             
-            col4, col5 = st.columns([1, 1])
-            
-            # Classification results and display corresponding SDG images
-            if label == "0 cardboard":
+            # Classification results
+            if "cardboard" in label.lower():
                 st.success("The image is classified as CARDBOARD.")                 
-            elif label == "1 metal":
+            elif "metal" in label.lower():
                 st.success("The image is classified as METAL.")
-            elif label == "2 plastic":
+            elif "plastic" in label.lower():
                 st.success("The image is classified as PLASTIC.")
-            elif label == "3 glass":
+            elif "glass" in label.lower():
                 st.success("The image is classified as GLASS.")
-            elif label == "4 paper":
+            elif "paper" in label.lower():
                 st.success("The image is classified as PAPER.")
-            elif label == "5 compost":
+            elif "compost" in label.lower():
                 st.success("The image is classified as COMPOST.")
             else:
                 st.error("The image is not classified as any relevant class.")
