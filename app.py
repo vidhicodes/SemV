@@ -2,15 +2,6 @@ from keras.models import load_model  # TensorFlow is required for Keras to work
 from PIL import Image, ImageOps  # Install pillow instead of PIL
 import numpy as np
 import streamlit as st 
-from dotenv import load_dotenv 
-import os
-import openai
-
-# Load environment variables from .env file
-load_dotenv()
-
-# Set OpenAI API Key
-openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # Define the model loading function
 @st.cache_resource  # Cache the model to avoid reloading it each time
@@ -54,22 +45,6 @@ def classify_waste(img):
 
     return class_name, confidence_score
 
-# Generate carbon footprint information using OpenAI API
-def generate_carbon_footprint_info(label):
-    waste_type = label.strip()
-    prompt = f"What is the approximate carbon footprint generated from {waste_type}? I need an approximate number for environmental awareness, focusing on typical waste disposal practices. Elaborate in about 100 words."
-    
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=prompt,
-        temperature=0.7,
-        max_tokens=600,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0
-    )
-    return response['choices'][0]['text']
-
 # Streamlit configuration
 st.set_page_config(layout='wide')
 
@@ -81,7 +56,7 @@ input_img = st.file_uploader("Enter your image", type=['jpg', 'png', 'jpeg'])
 if input_img is not None:
     if st.button("Classify"):
         
-        col1, col2, col3 = st.columns([1, 1, 1])
+        col1, col2 = st.columns([1, 1])
 
         with col1:
             st.info("Your uploaded Image")
@@ -107,7 +82,3 @@ if input_img is not None:
                 st.success("The image is classified as COMPOST.")
             else:
                 st.error("The image is not classified as any relevant class.")
-
-        with col3:
-            result = generate_carbon_footprint_info(label)
-            st.success(result)
