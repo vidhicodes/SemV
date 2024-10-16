@@ -6,78 +6,82 @@ from dotenv import load_dotenv
 import os
 import openai
 
+# Load environment variables from .env file
 load_dotenv()
 
+# Set OpenAI API Key
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
+# Define the model loading function
+@st.cache_resource  # Cache the model to avoid reloading it each time
+def load_keras_model():
+    # Load the Keras model from the provided h5 file
+    return load_model("keras_model.h5", compile=False)
+
+# Waste classification function
 def classify_waste(img):
     # Disable scientific notation for clarity
     np.set_printoptions(suppress=True)
 
     # Load the model
-    model = load_model("keras_model.h5", compile=False)
+    model = load_keras_model()
 
-    # Load the labels
+    # Load the updated labels
     class_names = open("labels.txt", "r").readlines()
 
-    # Create the array of the right shape to feed into the keras model
-    # The 'length' or number of images you can put into the array is
-    # determined by the first position in the shape tuple, in this case 1
+    # Create the array of the right shape to feed into the Keras model
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     
-    # Replace this with the path to your image
+    # Convert the image to RGB (in case it's in another mode)
     image = img.convert("RGB")
 
-    # resizing the image to be at least 224x224 and then cropping from the center
+    # Resize the image to 224x224 pixels
     size = (224, 224)
     image = ImageOps.fit(image, size, Image.Resampling.LANCZOS)
 
-    # turn the image into a numpy array
+    # Convert the image to a numpy array and normalize it
     image_array = np.asarray(image)
-
-    # Normalize the image
     normalized_image_array = (image_array.astype(np.float32) / 127.5) - 1
 
-    # Load the image into the array
+    # Load the image into the data array
     data[0] = normalized_image_array
 
-    # Predicts the model
+    # Perform prediction using the loaded model
     prediction = model.predict(data)
     index = np.argmax(prediction)
-    class_name = class_names[index]
+    class_name = class_names[index].strip()  # Clean the label from extra spaces or newline characters
     confidence_score = prediction[0][index]
-
-    # Print prediction and confidence score
-    #print("Class:", class_name[2:], end="")
-    #print("Confidence Score:", confidence_score)
 
     return class_name, confidence_score
 
+# Generate carbon footprint information using OpenAI API
 def generate_carbon_footprint_info(label):
-    label = label.split(' ')[1]
-    print(label)
+    waste_type = label.strip()
+    prompt = f"What is the approximate carbon footprint generated from {waste_type}? I need an approximate number for environmental awareness, focusing on typical waste disposal practices. Elaborate in about 100 words."
+    
     response = openai.Completion.create(
-    model="text-davinci-003",
-    prompt="What is the approximate Carbon emission or carbon footprint generated from "+label+"? I just need an approximate number to create awareness. Elaborate in 100 words.\n",
-    temperature=0.7,
-    max_tokens=600,
-    top_p=1,
-    frequency_penalty=0,
-    presence_penalty=0
+        model="text-davinci-003",
+        prompt=prompt,
+        temperature=0.7,
+        max_tokens=600,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
     )
     return response['choices'][0]['text']
 
-
+# Streamlit configuration
 st.set_page_config(layout='wide')
 
 st.title("Waste Classifier Sustainability App")
 
+# Upload an image file for classification
 input_img = st.file_uploader("Enter your image", type=['jpg', 'png', 'jpeg'])
 
 if input_img is not None:
     if st.button("Classify"):
         
-        col1, col2, col3 = st.columns([1,1,1])
+        col1, col2, col3 = st.columns([1, 1, 1])
 
         with col1:
             st.info("Your uploaded Image")
@@ -87,8 +91,11 @@ if input_img is not None:
             st.info("Your Result")
             image_file = Image.open(input_img)
             label, confidence_score = classify_waste(image_file)
-            col4, col5 = st.columns([1,1])
-            if label == "0 cardboard\n":
+            
+            col4, col5 = st.columns([1, 1])
+            
+            # Classification results and display corresponding SDG images
+            if label == "0 cardboard":
                 st.success("The image is classified as CARDBOARD.")                
                 with col4:
                     st.image("sdg goals/12.png", use_column_width=True)
@@ -96,21 +103,7 @@ if input_img is not None:
                 with col5:
                     st.image("sdg goals/14.png", use_column_width=True)
                     st.image("sdg goals/15.png", use_column_width=True) 
-            elif label == "1 plastic\n":
-                st.success("The image is classified as PLASTIC.")
-                with col4:
-                    st.image("sdg goals/6.jpg", use_column_width=True)
-                    st.image("sdg goals/12.png", use_column_width=True)
-                with col5:
-                    st.image("sdg goals/14.png", use_column_width=True)
-                    st.image("sdg goals/15.png", use_column_width=True) 
-            elif label == "2 glass\n":
-                st.success("The image is classified as GLASS.")
-                with col4:
-                    st.image("sdg goals/12.png", use_column_width=True)
-                with col5:
-                    st.image("sdg goals/14.png", use_column_width=True)
-            elif label == "3 metal\n":
+            elif label == "1 metal":
                 st.success("The image is classified as METAL.")
                 with col4:
                     st.image("sdg goals/3.png", use_column_width=True)
@@ -118,10 +111,34 @@ if input_img is not None:
                 with col5:
                     st.image("sdg goals/12.png", use_column_width=True)
                     st.image("sdg goals/14.png", use_column_width=True) 
+            elif label == "2 plastic":
+                st.success("The image is classified as PLASTIC.")
+                with col4:
+                    st.image("sdg goals/6.jpg", use_column_width=True)
+                    st.image("sdg goals/12.png", use_column_width=True)
+                with col5:
+                    st.image("sdg goals/14.png", use_column_width=True)
+                    st.image("sdg goals/15.png", use_column_width=True) 
+            elif label == "3 glass":
+                st.success("The image is classified as GLASS.")
+                with col4:
+                    st.image("sdg goals/12.png", use_column_width=True)
+                with col5:
+                    st.image("sdg goals/14.png", use_column_width=True)
+            elif label == "4 paper":
+                st.success("The image is classified as PAPER.")
+                with col4:
+                    st.image("sdg goals/12.png", use_column_width=True)
+                with col5:
+                    st.image("sdg goals/14.png", use_column_width=True)
+            elif label == "5 compost":
+                st.success("The image is classified as COMPOST.")
+                with col4:
+                    st.image("sdg goals/13.png", use_column_width=True)
+                    st.image("sdg goals/15.png", use_column_width=True)
             else:
                 st.error("The image is not classified as any relevant class.")
 
         with col3:
             result = generate_carbon_footprint_info(label)
             st.success(result)
-
