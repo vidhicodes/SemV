@@ -5,7 +5,7 @@ import cv2
 from keras.models import load_model
 from keras.layers import DepthwiseConv2D
 from keras.preprocessing import image
-from keras.applications.mobilenet_v2 import preprocess_input  # Adjust according to your model
+from keras.applications.mobilenet_v2 import preprocess_input
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 from PIL import Image, ImageOps
 
