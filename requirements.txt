@@ -1,6 +1,9 @@
 gdown
-tensorflow
 numpy
-Pillow
-streamlit
 requests
+streamlit
+tensorflow
+keras
+opencv-python
+Pillow
+
