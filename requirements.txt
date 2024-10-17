@@ -4,6 +4,6 @@ requests
 streamlit
 tensorflow
 keras
-opencv-python
+opencv-python-headless
 Pillow
 
