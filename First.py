@@ -4,7 +4,7 @@ import numpy as np
 from keras.models import load_model
 from keras.layers import DepthwiseConv2D
 from keras.preprocessing import image
-from keras.applications.mobilenet_v2 import preprocess_input  # Adjust according to your model
+from keras.applications.mobilenet_v2 import preprocess_input
 from PIL import Image
 
 # Custom DepthwiseConv2D class to handle loading without 'groups' argument
@@ -16,7 +16,7 @@ class CustomDepthwiseConv2D(DepthwiseConv2D):
 # Function to load the model
 @st.cache(allow_output_mutation=True)
 def load_model_func():
-    model_path = 'waste_classification.h5'  # or provide the absolute path
+    model_path = 'keras_model.h5'  # or provide the absolute path
     if not os.path.isfile(model_path):
         raise FileNotFoundError(f"Model file not found: {model_path}")
     
@@ -48,11 +48,32 @@ def classify_image(model, labels, image_data):
     predicted_label = labels[np.argmax(predictions)]
     return predicted_label
 
+# Function to handle webcam capture and classification
+def handle_webcam_capture(model, labels):
+    st.write("### Use your webcam to classify waste")
+    camera_input = st.camera_input("Take a picture")
+    
+    if camera_input is not None:
+        # Open the image from the camera input
+        image_data = Image.open(camera_input)  # Convert camera input to PIL Image
+
+        # Display the captured image
+        st.image(image_data, caption='Captured Image', use_column_width=True)
+        st.write("")
+
+        # Preprocess the image and make predictions using the model
+        image_data = preprocess_image(camera_input)  # Use the camera input directly
+        if model is not None and labels is not None:
+            predicted_label = classify_image(model, labels, image_data)
+            st.write(f"Predicted label: {predicted_label}")
+        else:
+            st.error("Model or labels not available. Please check if they were loaded correctly.")
+
 # Show classification page
 def show_classification_page():
     # Streamlit app layout
     st.title("Waste Classification App")
-    st.write("Choose an input method: either upload an image or use your webcam.")
+    st.write("Upload an image of waste to classify it, or use your webcam.")
 
     # Load the model and labels when the app starts
     model = None
@@ -68,44 +89,24 @@ def show_classification_page():
     except Exception as e:
         st.error(f"Error loading labels: {e}")
 
-    # Radio button for input selection
-    input_option = st.radio("Select input type:", ('Image Upload', 'Webcam'))
+    # Image upload
+    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
-    if input_option == 'Image Upload':
-        uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+    if uploaded_file is not None:
+        # Display uploaded image
+        st.image(uploaded_file, caption='Uploaded Image', use_column_width=True)
+        st.write("")
 
-        if uploaded_file is not None:
-            # Display uploaded image
-            st.image(uploaded_file, caption='Uploaded Image', use_column_width=True)
-            st.write("")
+        # Preprocess the image and make predictions using the model
+        image_data = preprocess_image(uploaded_file)
+        if model is not None and labels is not None:
+            predicted_label = classify_image(model, labels, image_data)
+            st.write(f"Predicted label: {predicted_label}")
+        else:
+            st.error("Model or labels not available. Please check if they were loaded correctly.")
 
-            # Preprocess the image and make predictions using the model
-            image_data = preprocess_image(uploaded_file)
-            if model is not None and labels is not None:
-                predicted_label = classify_image(model, labels, image_data)
-                st.write(f"Predicted label: {predicted_label}")
-            else:
-                st.error("Model or labels not available. Please check if they were loaded correctly.")
-
-    elif input_option == 'Webcam':
-        st.write("### Use your webcam to classify waste")
-        camera_input = st.camera_input("Take a picture")
-        
-        if camera_input is not None:
-            # Convert the camera input to a PIL Image
-            image_data = Image.open(camera_input)  # Read the image from the camera input
-
-            # Display the captured image
-            st.image(image_data, caption='Captured Image', use_column_width=True)
-            st.write("")
-
-            # Preprocess the image and make predictions using the model
-            image_data = preprocess_image(camera_input)  # Use the camera input directly
-            if model is not None and labels is not None:
-                predicted_label = classify_image(model, labels, image_data)
-                st.write(f"Predicted label: {predicted_label}")
-            else:
-                st.error("Model or labels not available. Please check if they were loaded correctly.")
+    # Call the function to handle webcam input
+    handle_webcam_capture(model, labels)
 
 # Run the Streamlit app
 if __name__ == "__main__":
