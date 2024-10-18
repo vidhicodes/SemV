@@ -1,0 +1,7 @@
+gdown
+tensorflow
+numpy
+Pillow
+streamlit
+python-dotenv
+openai

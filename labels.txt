@@ -1,0 +1,6 @@
+Cardboard
+Metal
+Plastic
+Glass
+Paper
+Compost
