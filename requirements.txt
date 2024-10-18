@@ -1,9 +1,0 @@
-gdown
-numpy
-requests
-streamlit
-tensorflow
-keras
-opencv-python-headless
-Pillow
-streamlit-webrtc
