@@ -118,7 +118,7 @@ def show_classification_page():
             background-color: #45a049;
         }
         .suggestion {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: #00A86B;
             border-radius: 8px;
             padding: 10px;
             margin-top: 10px;
