@@ -26,7 +26,7 @@ def main():
         show_home_page()
     elif page == "🔍 Classification":
         show_classification_page()
-    elif page == "ℹ️ About":
+    elif page == "ℹ️  About":
         show_about_page()
     elif page == "📊 Recycling Statistics":
         show_statistics_page()  # Show the statistics page
