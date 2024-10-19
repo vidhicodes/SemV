@@ -6,7 +6,6 @@ def show_about_page():
         f"""
         <style>
         .stApp {{
-            background-image: url({background_image_url});
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
