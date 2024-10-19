@@ -94,7 +94,7 @@ def show_classification_page():
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
-            color: #333;
+            color: #fff;
             font-family: 'Arial', sans-serif;
         }
         .title {
