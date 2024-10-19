@@ -2,12 +2,10 @@ import streamlit as st
 
 # Set the background image
 def set_background_image():
-    background_image_url = "https://png.pngtree.com/thumb_back/fh260/background/20220217/pngtree-green-simple-atmospheric-waste-classification-illustration-background-image_953325.jpg"
     st.markdown(
         f"""
         <style>
         .stApp {{
-            background-image: url("{background_image_url}");
             background-size: cover;
             background-attachment: fixed;
             color: #2C3E50;
@@ -21,9 +19,9 @@ def set_background_image():
 def show_sustainability_page():
     set_background_image()
     
-    st.title("🌿 Embrace Sustainability: Small Steps, Big Impact")
+    st.title("Embrace Sustainability: Small Steps, Big Impact")
     
-    st.markdown("### 🌍 *Practical Ways to Live Sustainably*")
+    st.markdown("### *Practical Ways to Live Sustainably*")
     
     st.markdown("""
     **1. Composting**:
@@ -51,7 +49,7 @@ def show_sustainability_page():
     - Support brands and companies that prioritize sustainability and ethical practices.
     - **Tip**: Bring your own reusable bags, bottles, and containers to reduce single-use plastic waste.
     
-    ### 🌱 *Get Involved and Make a Difference*
+    ### *Get Involved and Make a Difference*
     
     **1. Participate in Community Events**:
     - Join local clean-up drives to help keep parks, beaches, and streets clean.
@@ -68,7 +66,7 @@ def show_sustainability_page():
     - Choose products that are organic, fair-trade, or sustainably sourced.
     - **Tip**: Reduce your carbon footprint by supporting local artisans and farmers who use sustainable practices.
     
-    ### 🌟 *Start Small, Think Big!*
+    ### *Start Small, Think Big!*
     Remember, every small step counts towards a more sustainable future. Your efforts, no matter how small, can inspire a ripple effect of positive change!
     """)
 
