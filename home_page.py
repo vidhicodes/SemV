@@ -94,23 +94,7 @@ def show_home_page():
     st.markdown("<p class='intro'>**This application helps you classify waste into different categories effortlessly.**</p>", unsafe_allow_html=True)
     st.markdown("<p class='intro'>Whether you are at home, at school, or in a business, understanding how to manage your waste is critical for a cleaner and greener environment.</p>", unsafe_allow_html=True)
 
-    # Call to Action Buttons
-    col1, col2 = st.columns(2)
     
-    with col1:
-        if st.button("Get Started", key="get_started"):
-            st.markdown(
-                "<script>window.location.href = '/classification_page';</script>",
-                unsafe_allow_html=True
-            )
-
-    with col2:
-        if st.button("Learn More", key="learn_more"):
-            st.markdown(
-                "<script>window.location.href = '/about_page';</script>",
-                unsafe_allow_html=True
-            )
-
     # Features Section
     st.subheader("Why Use This Application?")
     
