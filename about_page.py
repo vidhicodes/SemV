@@ -4,7 +4,7 @@ def show_about_page():
     # Page content
     st.title("About EcoSort")
     st.markdown("""
-    Welcome to the **EcoSort** <br> This tool utilizes cutting-edge machine learning to help users identify different types of waste and offers useful suggestions on recycling, reusing, and proper disposal.
+    Welcome to the **EcoSort**.This tool utilizes cutting-edge machine learning to help users identify different types of waste and offers useful suggestions on recycling, reusing, and proper disposal.
     """)
 
     # Mission Section
