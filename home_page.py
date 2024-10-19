@@ -5,7 +5,6 @@ def show_home_page():
     st.markdown(f"""
     <style>
         .stApp {{
-            background-image: url("{background_image_url}");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
