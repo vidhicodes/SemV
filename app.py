@@ -4,66 +4,129 @@ from classification_page import show_classification_page
 from about_page import show_about_page
 from contact_page import show_contact_page        # Import the new contact page
 from sustainability_page import show_sustainability_page  # Import the new sustainability page
+import streamlit as st
 
 def apply_common_css():
-    css = """
+    st.markdown("""
     <style>
-        body {
-            background-color: #1e1e1e; /* Dark background */
-            color: #ffffff; /* Light text color */
-        }
-        h1, h2, h3, h4, h5, h6 {
-            color: #f0f0f0; /* Slightly lighter text for headings */
-        }
-        .stButton {
-            background-color: #0072b1; /* Button color */
-            color: white; /* Button text color */
-            border: none; /* Remove border */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px 20px; /* Padding for buttons */
-            transition: background-color 0.3s; /* Smooth background transition */
-        }
-        .stButton:hover {
-            background-color: #005580; /* Darker shade on hover */
-        }
-        .stTextInput, .stTextArea {
-            background-color: #2b2b2b; /* Dark background for text input */
-            color: #ffffff; /* Light text color */
-            border: 1px solid #444; /* Border for input fields */
-            border-radius: 5px; /* Rounded corners for input fields */
-        }
-        .stTextInput:focus, .stTextArea:focus {
-            border-color: #0072b1; /* Change border color on focus */
-            outline: none; /* Remove default outline */
-        }
-        .stMarkdown {
-            color: #f0f0f0; /* Light text color for markdown */
-        }
-        .stSelectbox, .stMultiselect {
-            background-color: #2b2b2b; /* Dark background for select boxes */
-            color: #ffffff; /* Light text color */
-            border: 1px solid #444; /* Border for select boxes */
-            border-radius: 5px; /* Rounded corners for select boxes */
-        }
-        .stSelectbox:focus, .stMultiselect:focus {
-            border-color: #0072b1; /* Change border color on focus */
-            outline: none; /* Remove default outline */
-        }
-        .stSlider {
-            color: #0072b1; /* Slider color */
-        }
-        .stAlert {
-            background-color: #2b2b2b; /* Background for alerts */
-            color: #ffffff; /* Text color for alerts */
-            border-left: 4px solid #0072b1; /* Left border for alerts */
-        }
-        .stMarkdown img {
-            max-width: 100%; /* Responsive images */
-            height: auto; /* Maintain aspect ratio */
-        }
+    /* Common Styles */
+    .stApp {
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+    }
+
+    /* Home Page Styles */
+    .header-title {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 50px;
+        animation: fadeIn 1s;
+    }
+
+    .intro {
+        font-size: 22px;
+        text-align: center;
+        margin: 20px auto;
+        max-width: 800px;
+        animation: slideIn 1s;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .feature {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+
+    .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .feature-title {
+        font-weight: bold;
+        color: #2196f3;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    /* Classification Page Styles */
+    .title {
+        text-align: center;
+        font-size: 2.5em;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+
+    .button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #45a049;
+    }
+
+    .suggestion {
+        background-color: #00A86B;
+        border-radius: 8px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    /* Sustainability Page Styles */
+    .stats-container {
+        text-align: center;
+        margin: 40px 0;
+        animation: bounceIn 1s;
+    }
+
+    @keyframes bounceIn {
+        0% { transform: scale(0); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        color: #555;
+    }
     </style>
-    """
-    st.markdown(css, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
+
 
 # Main function to navigate through the pages
 def main():
