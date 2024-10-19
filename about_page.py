@@ -2,9 +2,9 @@ import streamlit as st
 
 def show_about_page():
     # Page content
-    st.title("About This App")
+    st.title("About EcoSort")
     st.markdown("""
-    Welcome to the **EcoSort** \n This tool utilizes cutting-edge machine learning to help users identify different types of waste and offers useful suggestions on recycling, reusing, and proper disposal.
+    Welcome to the **EcoSort** <br> This tool utilizes cutting-edge machine learning to help users identify different types of waste and offers useful suggestions on recycling, reusing, and proper disposal.
     """)
 
     # Mission Section
@@ -19,15 +19,15 @@ def show_about_page():
 
     with col1:
         st.image("profile.png", caption="Vidhi Dhakate", use_column_width=True)
-        st.markdown("**Vidhi Dhakate** \n Lead Developer")
+        st.markdown("**Vidhi Dhakate** <br> Lead Developer")
 
     with col2:
          st.image("profile.png", caption="Tejas Mahakalkar", use_column_width=True)
-         st.markdown("**Tejas Mahakalkar** \n Project Manager")
+         st.markdown("**Tejas Mahakalkar** <br> Project Manager")
 
     with col3:
         st.image("profile.png", caption="Kashish Pawar", use_column_width=True)
-        st.markdown("**Kashish Pawar** \n Data Scientist")
+        st.markdown("**Kashish Pawar** <br> Data Scientist")
 
     # Future Work Section
     st.subheader("Future Work")
