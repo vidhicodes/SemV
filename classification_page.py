@@ -90,7 +90,6 @@ def show_classification_page():
         """
         <style>
         body {
-            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20220217/pngtree-green-simple-atmospheric-waste-classification-illustration-background-image_953325.jpg");
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -129,7 +128,7 @@ def show_classification_page():
     )
 
     # Streamlit app layout
-    st.markdown('<div class="title">Waste Classification App</div>', unsafe_allow_html=True)
+    st.markdown('<div class="title">EcoSort</div>', unsafe_allow_html=True)
     st.write("Select an option to classify waste:")
 
     # Add radio button for choosing the input method
@@ -140,13 +139,11 @@ def show_classification_page():
 
     try:
         model = load_model_func()
-        st.success("Model loaded successfully!", icon="✅")
     except Exception as e:
         st.error(f"Error loading model: {e}")
 
     try:
         labels = load_labels()
-        st.success("Labels loaded successfully!", icon="✅")
     except Exception as e:
         st.error(f"Error loading labels: {e}")
 
@@ -175,7 +172,6 @@ def show_classification_page():
 
     # Handle webcam capture
     if option == "Use Webcam":
-        st.write("### Use your webcam to classify waste")
         camera_input = st.camera_input("Take a picture")
         
         if camera_input is not None:
