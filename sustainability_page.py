@@ -4,7 +4,9 @@ import streamlit as st
 
 # Show sustainability page with enhanced content
 def show_sustainability_page():
-    st.title("Embrace Sustainability: Small Steps, Big Impact")
+    st.title("Embrace Sustainability")
+    st.subtitle("Small Steps, Big Impact")
+    
     
     st.markdown("### *Practical Ways to Live Sustainably*")
     
