@@ -2,7 +2,6 @@ import streamlit as st
 
 def show_about_page():
     # Apply background image style
-    background_image_url = "https://png.pngtree.com/thumb_back/fh260/background/20220217/pngtree-green-simple-atmospheric-waste-classification-illustration-background-image_953325.jpg"
     st.markdown(
         f"""
         <style>
@@ -20,33 +19,33 @@ def show_about_page():
     # Page content
     st.title("About This App")
     st.markdown("""
-    Welcome to the **Intelligent Waste Classification App**! 🌍 This tool utilizes cutting-edge machine learning to help users identify different types of waste and offers useful suggestions on recycling, reusing, and proper disposal.
+    Welcome to the **EcoSort** \n This tool utilizes cutting-edge machine learning to help users identify different types of waste and offers useful suggestions on recycling, reusing, and proper disposal.
     """)
 
     # Mission Section
-    st.subheader("Our Mission 🎯")
+    st.subheader("Our Mission")
     st.markdown("""
     Our mission is to encourage sustainable waste management practices by providing an easy-to-use tool that educates and empowers users to make better recycling choices. We believe that small actions can lead to significant environmental changes.
     """)
 
     # Team Section
-    st.subheader("Meet the Team 👥")
+    st.subheader("Meet the Team")
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.image("profile.png", caption="Vidhi Dhakate", use_column_width=True)
-        st.markdown("**Vidhi Dhakate**\nLead Developer")
+        st.markdown("**Vidhi Dhakate** \n Lead Developer")
 
     with col2:
          st.image("profile.png", caption="Tejas Mahakalkar", use_column_width=True)
-         st.markdown("**Tejas Mahakalkar**\nProject Manager")
+         st.markdown("**Tejas Mahakalkar** \n Project Manager")
 
     with col3:
         st.image("profile.png", caption="Kashish Pawar", use_column_width=True)
-        st.markdown("**Kashish Pawar**\nData Scientist")
+        st.markdown("**Kashish Pawar** \n Data Scientist")
 
     # Future Work Section
-    st.subheader("Future Work 🚀")
+    st.subheader("Future Work")
     st.markdown("""
     - **Real-Time Feedback:** Allow users to receive instant feedback on their recycling practices.
     - **Expand Waste Categories:** Continue adding more waste categories for better identification.
@@ -56,7 +55,7 @@ def show_about_page():
     """)
 
     # Call to Action Section
-    st.subheader("Get Involved! 🤝")
+    st.subheader("Join Us")
     st.markdown("""
     Join us in our mission to create a cleaner, greener planet! Here are some ways you can contribute:
     - **Spread the Word:** Share this app with friends and family to raise awareness about waste management.
