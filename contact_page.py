@@ -1,7 +1,7 @@
 import streamlit as st
 
 def show_contact_page():
-    st.title("✉️ Contact Us")
+    st.title("Contact Us")
     
     st.markdown("""
     If you have any questions, suggestions, or feedback, feel free to reach out to us!
