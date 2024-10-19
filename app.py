@@ -8,7 +8,7 @@ from sustainability_page import show_sustainability_page  # Import the new susta
 # Main function to navigate through the pages
 def main():
     # Set up the sidebar for navigation
-    st.sidebar.title("Navigation")
+    st.sidebar.title("EcoSort")
     
     # Create radio buttons for navigation with icons
     page = st.sidebar.radio(
@@ -26,9 +26,9 @@ def main():
         show_classification_page()
     elif page == "About":
         show_about_page()
-    elif page == "✉️ Contact Us":
+    elif page == "Contact Us":
         show_contact_page()    # Show the contact page
-    elif page == "🌱 Sustainability Practices":
+    elif page == "Sustainability Practices":
         show_sustainability_page()  # Show the sustainability practices page
 
 if __name__ == "__main__":
