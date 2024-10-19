@@ -69,7 +69,7 @@ def apply_common_css():
 
     .feature-title {
         font-weight: bold;
-        color: #2196f3;
+        color: #ffffc5;
         font-size: 24px;
         margin-bottom: 10px;
     }
