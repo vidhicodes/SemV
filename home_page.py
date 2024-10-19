@@ -4,7 +4,7 @@ import streamlit as st
 
 def show_home_page():
     # Header
-    st.markdown("<h1 class='header-title'>Ecosort</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='header-title'>EcoSort</h1>", unsafe_allow_html=True)
     
 
     # Introduction Section
