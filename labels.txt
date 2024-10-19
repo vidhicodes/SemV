@@ -1,6 +1,6 @@
 Cardboard
-Metal
-Plastic
-Glass
-Paper
 Compost
+Glass
+Metal
+Paper
+Plastic
