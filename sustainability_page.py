@@ -36,23 +36,6 @@ def show_sustainability_page():
     - Support brands and companies that prioritize sustainability and ethical practices.
     - **Tip**: Bring your own reusable bags, bottles, and containers to reduce single-use plastic waste.
     
-    ### *Get Involved and Make a Difference*
-    
-    **1. Participate in Community Events**:
-    - Join local clean-up drives to help keep parks, beaches, and streets clean.
-    - Support urban gardening initiatives and tree-planting events in your area.
-    - **Tip**: Volunteer for or donate to local environmental organizations to amplify your impact.
-
-    **2. Educate and Inspire Others**:
-    - Spread awareness about the importance of recycling, reducing waste, and conserving energy.
-    - Organize workshops or webinars to share knowledge on sustainable living practices.
-    - **Tip**: Share your sustainability journey on social media to inspire friends and family.
-
-    **3. Shop Local, Shop Green**:
-    - Buy from local farmers' markets, thrift shops, or businesses that prioritize eco-friendly products.
-    - Choose products that are organic, fair-trade, or sustainably sourced.
-    - **Tip**: Reduce your carbon footprint by supporting local artisans and farmers who use sustainable practices.
-    
     ### *Start Small, Think Big!*
     Remember, every small step counts towards a more sustainable future. Your efforts, no matter how small, can inspire a ripple effect of positive change!
     """)
