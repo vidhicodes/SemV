@@ -13,23 +13,19 @@ def main():
     # Create radio buttons for navigation with icons
     page = st.sidebar.radio(
         "Go to:",
-        ("🏠 Home", "🔍 Classification", "ℹ️ About", "📊 Recycling Statistics", "❓ FAQ", "✉️ Contact Us", "🌱 Sustainability Practices"),
+        ("Home", "Classification", "About","Contact Us", "Sustainability Practices"),
         index=0,  # Default selected page
         label_visibility="collapsed"  # Hide the label for a cleaner look
     )
 
 
     # Call the corresponding page function based on the selected option
-    if page == "🏠 Home":
+    if page == "Home":
         show_home_page()
-    elif page == "🔍 Classification":
+    elif page == "Classification":
         show_classification_page()
-    elif page == "ℹ️  About":
+    elif page == "About":
         show_about_page()
-    elif page == "📊 Recycling Statistics":
-        show_statistics_page()  # Show the statistics page
-    elif page == "❓ FAQ":
-        show_faq_page()        # Show the FAQ page
     elif page == "✉️ Contact Us":
         show_contact_page()    # Show the contact page
     elif page == "🌱 Sustainability Practices":
