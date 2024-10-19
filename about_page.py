@@ -34,15 +34,15 @@ def show_about_page():
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.image("wolverine.jpg", caption="Vidhi Dhakate", use_column_width=True)
+        st.image("profile.png", caption="Vidhi Dhakate", use_column_width=True)
         st.markdown("**Vidhi Dhakate**\nLead Developer")
 
     with col2:
-         st.image("dogpool.jpg", caption="Tejas Mahakalkar", use_column_width=True)
+         st.image("profile.png", caption="Tejas Mahakalkar", use_column_width=True)
          st.markdown("**Tejas Mahakalkar**\nProject Manager")
 
     with col3:
-        st.image("deadpool.jpg", caption="Kashish Pawar", use_column_width=True)
+        st.image("profile.png", caption="Kashish Pawar", use_column_width=True)
         st.markdown("**Kashish Pawar**\nData Scientist")
 
     # Future Work Section
