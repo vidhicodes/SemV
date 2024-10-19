@@ -53,7 +53,7 @@ def apply_common_css():
     }
 
     .feature {
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: #00A8B6;
         padding: 20px;
         border-radius: 10px;
         margin-bottom: 20px;
