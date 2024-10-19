@@ -8,9 +8,8 @@ def show_home_page():
     
 
     # Introduction Section
-    st.markdown("<p class='intro'>This application helps you classify waste into different categories effortlessly.</p>", unsafe_allow_html=True)
-    st.markdown("<p class='intro'>Whether you are at home, at school, or in a business, understanding how to manage your waste is critical for a cleaner and greener environment.</p>", unsafe_allow_html=True)
-
+    st.markdown("<p class='intro'>This application helps you classify waste into different categories effortlessly. <br> Whether you are at home, at school, or in a business, understanding how to manage your waste is critical for a cleaner and greener environment. </p>", unsafe_allow_html=True)
+    
     
     # Features Section
     st.subheader("Why Use This Application?")
