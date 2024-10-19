@@ -138,7 +138,7 @@ def main():
     # Create radio buttons for navigation with icons
     page = st.sidebar.radio(
         "Go to:",
-        ("Home", "Classification", "About", "Contact Us", "Sustainability Practices"),
+        ("Home", "Classification", "Sustainability Practices", "About", "Contact Us"),
         index=0,  # Default selected page
         label_visibility="collapsed"  # Hide the label for a cleaner look
     )
