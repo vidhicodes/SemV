@@ -3,9 +3,9 @@ import streamlit as st
 def show_about_page():
     # Page content
     st.title("About EcoSort")
-    st.markdown("""
+    st.markdown("
     Welcome to the **EcoSort** <br> This tool utilizes cutting-edge machine learning to help users identify different types of waste and offers useful suggestions on recycling, reusing, and proper disposal.
-    """)
+    ", unsafe_allow_html=True)
 
     # Mission Section
     st.subheader("Our Mission")
