@@ -90,8 +90,6 @@ def show_home_page():
     # Header
     st.markdown("<h1 class='header-title'>Ecosort</h1>", unsafe_allow_html=True)
     
-    # Add Hero Image
-    st.image("https://example.com/hero-image.jpg", use_column_width=True)
 
     # Introduction Section
     st.markdown("<p class='intro'>**This application helps you classify waste into different categories effortlessly.**</p>", unsafe_allow_html=True)
