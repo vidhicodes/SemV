@@ -5,59 +5,65 @@ from about_page import show_about_page
 from contact_page import show_contact_page        # Import the new contact page
 from sustainability_page import show_sustainability_page  # Import the new sustainability page
 
-# Function to apply common CSS styles
 def apply_common_css():
-    st.markdown(
-        """
-        <style>
+    css = """
+    <style>
         body {
-            background-color: #1E1E1E;  /* Main background for dark mode */
-            color: #F1F1F1;  /* Main text color */
+            background-color: #1e1e1e; /* Dark background */
+            color: #ffffff; /* Light text color */
         }
-
-        .sidebar {
-            background-color: #2A2A2A;  /* Darker background for the sidebar */
-            color: white;  /* Text color for sidebar */
+        h1, h2, h3, h4, h5, h6 {
+            color: #f0f0f0; /* Slightly lighter text for headings */
         }
-
-        h1, h2, h3, h4 {
-            color: #F1F1F1;  /* Title color */
-            font-weight: bold;  /* Bolder title text */
+        .stButton {
+            background-color: #0072b1; /* Button color */
+            color: white; /* Button text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Padding for buttons */
+            transition: background-color 0.3s; /* Smooth background transition */
         }
-
-        button {
-            background-color: #4CAF50;  /* Button background */
-            color: white;  /* Button text color */
-            border: none;  /* Remove borders */
-            padding: 10px;  /* Padding for buttons */
-            border-radius: 5px;  /* Rounded corners for buttons */
-            cursor: pointer;  /* Pointer cursor for buttons */
+        .stButton:hover {
+            background-color: #005580; /* Darker shade on hover */
         }
-
-        button:hover {
-            background-color: #45a049;  /* Darker shade on hover */
-        }
-
         .stTextInput, .stTextArea {
-            background-color: #2A2A2A;  /* Dark background for text inputs */
-            color: #F1F1F1;  /* Text color for inputs */
-            border: 1px solid #4CAF50;  /* Green border for inputs */
-            border-radius: 5px;  /* Rounded corners */
-            padding: 8px;  /* Padding for inputs */
+            background-color: #2b2b2b; /* Dark background for text input */
+            color: #ffffff; /* Light text color */
+            border: 1px solid #444; /* Border for input fields */
+            border-radius: 5px; /* Rounded corners for input fields */
         }
-
         .stTextInput:focus, .stTextArea:focus {
-            border-color: #8BC34A;  /* Lighter border on focus */
-            outline: none;  /* Remove default outline */
+            border-color: #0072b1; /* Change border color on focus */
+            outline: none; /* Remove default outline */
         }
-
-        .stButton > button {
-            transition: background-color 0.3s;  /* Smooth transition for button hover */
+        .stMarkdown {
+            color: #f0f0f0; /* Light text color for markdown */
         }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+        .stSelectbox, .stMultiselect {
+            background-color: #2b2b2b; /* Dark background for select boxes */
+            color: #ffffff; /* Light text color */
+            border: 1px solid #444; /* Border for select boxes */
+            border-radius: 5px; /* Rounded corners for select boxes */
+        }
+        .stSelectbox:focus, .stMultiselect:focus {
+            border-color: #0072b1; /* Change border color on focus */
+            outline: none; /* Remove default outline */
+        }
+        .stSlider {
+            color: #0072b1; /* Slider color */
+        }
+        .stAlert {
+            background-color: #2b2b2b; /* Background for alerts */
+            color: #ffffff; /* Text color for alerts */
+            border-left: 4px solid #0072b1; /* Left border for alerts */
+        }
+        .stMarkdown img {
+            max-width: 100%; /* Responsive images */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+    """
+    st.markdown(css, unsafe_allow_html=True)
 
 # Main function to navigate through the pages
 def main():
