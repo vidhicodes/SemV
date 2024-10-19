@@ -1,3 +1,4 @@
 # SemV
-Mini Project 
+Mini Project
+
 EcoSort : The Waste Classification Model
