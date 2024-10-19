@@ -1,8 +1,5 @@
 import streamlit as st
 
-# Background image URL
-background_image_url = "https://png.pngtree.com/thumb_back/fh260/background/20220217/pngtree-green-simple-atmospheric-waste-classification-illustration-background-image_953325.jpg"
-
 def show_home_page():
     # Custom CSS for better aesthetics and background image
     st.markdown(f"""
@@ -20,7 +17,6 @@ def show_home_page():
             font-weight: bold;
             text-align: center;
             margin-top: 50px;
-            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.9);
             animation: fadeIn 1s;
         }}
         @keyframes fadeIn {{
@@ -93,7 +89,7 @@ def show_home_page():
     """, unsafe_allow_html=True)
 
     # Header
-    st.markdown("<h1 class='header-title'>Welcome to the Intelligent Waste Classification App!</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='header-title'>Ecosort</h1>", unsafe_allow_html=True)
     
     # Add Hero Image
     st.image("https://example.com/hero-image.jpg", use_column_width=True)
@@ -108,14 +104,14 @@ def show_home_page():
     with col1:
         if st.button("Get Started", key="get_started"):
             st.markdown(
-                "<script>window.location.href = '/?Classification';</script>",
+                "<script>window.location.href = '/classification_page';</script>",
                 unsafe_allow_html=True
             )
 
     with col2:
         if st.button("Learn More", key="learn_more"):
             st.markdown(
-                "<script>window.location.href = '/?About';</script>",
+                "<script>window.location.href = '/about_page';</script>",
                 unsafe_allow_html=True
             )
 
