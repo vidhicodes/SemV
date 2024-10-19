@@ -87,7 +87,7 @@ def get_suggestions(predicted_label):
 # Show classification page
 def show_classification_page():
     # Streamlit app layout
-    st.markdown('<div class="title">EcoSort</div>', unsafe_allow_html=True)
+    st.markdown('<div class="header-title">EcoSort</div>', unsafe_allow_html=True)
     st.write("Select an option to classify waste:")
 
     # Add radio button for choosing the input method
