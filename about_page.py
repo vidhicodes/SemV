@@ -1,8 +1,6 @@
 import streamlit as st
 
 def show_about_page():
-    apply_common_css()
-
     # Page content
     st.title("About This App")
     st.markdown("""
