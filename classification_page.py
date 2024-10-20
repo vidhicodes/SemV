@@ -200,18 +200,6 @@ def show_classification_page():
                         st.error(f"Error during classification: {e}")
             st.markdown('</div>', unsafe_allow_html=True)
 
-    # Enhanced sidebar
-    st.sidebar.markdown("## Waste Classification App")
-    st.sidebar.write("This application helps you classify types of waste by analyzing images. Learn how you can better manage and recycle waste effectively.")
-
-    # Footer with enhanced links
-    st.markdown(
-        "<div class='footer-links' style='text-align: center; padding-top: 30px;'>"
-        "<a href='#' style='font-weight:bold;'>Learn More about Waste Management</a> | "
-        "<a href='#' style='font-weight:bold;'>Recycling Tips</a>"
-        "</div>",
-        unsafe_allow_html=True
-    )
 
 # Main application
 if __name__ == "__main__":
