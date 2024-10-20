@@ -19,15 +19,15 @@ def show_about_page():
 
     with col1:
         st.image("vidhi.jpg", use_column_width=True)
-        st.markdown("**Vidhi Dhakate** <br> Lead Developer", unsafe_allow_html=True)
+        st.markdown("**Vidhi Dhakate**", unsafe_allow_html=True)
     
     with col2:
-        st.image("profile.png", use_column_width=True)
-        st.markdown("**Tejas Mahakalkar** <br> Project Manager", unsafe_allow_html=True)
+        st.image("tejas.jpg", use_column_width=True)
+        st.markdown("**Tejas Mahakalkar**", unsafe_allow_html=True)
 
     with col3:
         st.image("kashish.jpg", use_column_width=True)
-        st.markdown("**Kashish Pawar** <br> Data Scientist", unsafe_allow_html=True)
+        st.markdown("**Kashish Pawar**", unsafe_allow_html=True)
 
     # Future Work Section
     st.subheader("Future Work")
