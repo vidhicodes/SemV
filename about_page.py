@@ -45,6 +45,7 @@ def show_about_page():
     Help make a positive impact! Share the app, join local clean-up efforts, and encourage others to adopt eco-friendly habits.
     """)
 
-    st.markdown("### Thank you for supporting sustainable practices! Together, we can make a difference!")
+    # Thank you line in italics and smaller font size
+    st.markdown('<p style="font-size:12px; font-style:italic;">Thank you for supporting sustainable practices! Together, we can make a difference!</p>', unsafe_allow_html=True)
 
 show_about_page()
