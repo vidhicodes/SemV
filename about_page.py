@@ -32,21 +32,19 @@ def show_about_page():
 
     # Future Work Section
     st.subheader("Future Work")
-    st.markdown("""
-    - **Real-Time Feedback:** Allow users to receive instant feedback on their recycling practices.
-    - **Expand Waste Categories:** Continue adding more waste categories for better identification.
-    - **Community Features:** Enable users to share recycling tips and challenges.
-    - **Gamification Elements:** Introduce badges and rewards for active participants to encourage engagement.
-    - **Educational Resources:** Provide articles and resources on sustainability practices to enhance user knowledge.
-    """)
+   st.markdown("""
+- **Real-Time Feedback**: Provide instant feedback on recycling efforts.
+- **Expand Categories**: Add more waste categories for accurate identification.
+- **Community Engagement**: Enable sharing of recycling tips and challenges.
+- **Gamification**: Introduce rewards to boost user participation.
+- **Educational Resources**: Offer articles on sustainability to enhance awareness.
+""")
+
 
     # Call to Action Section
     st.subheader("Join Us")
     st.markdown("""
-    Join us in our mission to create a cleaner, greener planet! Here are some ways you can contribute:
-    - **Spread the Word:** Share this app with friends and family to raise awareness about waste management.
-    - **Participate in Local Clean-Up Events:** Get involved in your community and help keep your environment clean.
-    - **Follow Us on Social Media:** Stay updated on our latest features and sustainability tips.
+    Help make a positive impact! Share the app, join local clean-up efforts, and encourage others to adopt eco-friendly habits.
     """)
 
-    st.success("Thank you for supporting sustainable practices! Together, we can make a difference!")
+    st.write("Thank you for supporting sustainable practices! Together, we can make a difference!")
