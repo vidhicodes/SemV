@@ -27,11 +27,12 @@ def apply_common_css():
 
     /* Home Page Styles */
     .header-title {
-        font-size: 40px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 50px;
-        animation: fadeIn 1s;
+            text-align: center;
+            font-size: 3.5em;
+            color: 	#66FF00; /* Green shade for eco-friendliness */
+            font-weight: 700;
+            padding: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .intro {
