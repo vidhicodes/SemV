@@ -48,3 +48,5 @@ def show_about_page():
     """)
 
     st.markdown("### Thank you for supporting sustainable practices! Together, we can make a difference!")
+
+show_about_page()
