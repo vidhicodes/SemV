@@ -134,7 +134,7 @@ def main():
     apply_common_css()  # Apply common CSS styles
 
     # Set up the sidebar for navigation
-    st.sidebar.title("EcoSort")
+    st.sidebar.title("EcoSort 🌱")
     
     # Create radio buttons for navigation with icons
     page = st.sidebar.radio(
