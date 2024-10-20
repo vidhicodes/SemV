@@ -47,4 +47,4 @@ def show_about_page():
     Help make a positive impact! Share the app, join local clean-up efforts, and encourage others to adopt eco-friendly habits.
     """)
 
-    st.write("Thank you for supporting sustainable practices! Together, we can make a difference!")
+    st.markdown("### Thank you for supporting sustainable practices! Together, we can make a difference!")
