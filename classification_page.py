@@ -150,11 +150,11 @@ def show_classification_page():
     )
 
     # Display enhanced title
-    st.markdown('<div class="title">Eco-Sort 🌱</div>', unsafe_allow_html=True)
+    st.markdown('<div class="title">EcoSort 🌱</div>', unsafe_allow_html=True)
     st.write("### Capture an image using your webcam or upload an image file to classify the type of waste")
 
     # Webcam option
-    option = st.selectbox("Choose an option:", ("Upload Image", "Use Webcam"))
+    option = st.radio("Choose an option:", ("Upload Image", "Use Webcam"))
 
     if option == "Use Webcam":
         st.markdown("<div class='camera-section'>", unsafe_allow_html=True)
