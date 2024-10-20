@@ -16,7 +16,7 @@ def show_home_page():
     
     feature_list = [
         ("Accurate Classification", "Utilizes state-of-the-art machine learning models to accurately classify various waste types."),
-        ("Disposing Suggestions", "Receive instant suggestions on recycling, reusing, or disposing of waste responsibly."),
+        ("Instant Suggestions", "Receive instant suggestions on recycling, reusing, or disposing of waste responsibly."),
         ("Easy to Use", "Simply upload an image, and the app intelligently categorizes your waste."),
         ("Educational Resources", "Learn about waste management and how you can contribute to a sustainable future.")
     ]
