@@ -46,6 +46,6 @@ def show_about_page():
     """)
 
     # Thank you line in italics and smaller font size
-    st.markdown('<p style="font-size:12px; font-style:italic;">Thank you for supporting sustainable practices! Together, we can make a difference!</p>', unsafe_allow_html=True)
+    st.markdown('<p style="font-size:18px; font-style:italic;">Thank you for supporting sustainable practices! Together, we can make a difference!</p>', unsafe_allow_html=True)
 
 show_about_page()
