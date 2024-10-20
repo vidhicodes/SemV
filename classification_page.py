@@ -101,7 +101,7 @@ def show_classification_page():
         .title {
             text-align: center;
             font-size: 3.5em;
-            color: #2E8B57; /* Green shade for eco-friendliness */
+            color: 	#66FF00; /* Green shade for eco-friendliness */
             font-weight: 700;
             padding: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
