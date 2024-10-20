@@ -4,7 +4,7 @@ def show_about_page():
     # Page content
     st.title("About EcoSort")
     st.markdown("""
-    Welcome to the **EcoSort**.This tool utilizes cutting-edge machine learning to help users identify different types of waste and offers useful suggestions on recycling, reusing, and proper disposal.
+    Welcome to the **EcoSort**. This tool utilizes cutting-edge machine learning to help users identify different types of waste and offers useful suggestions on recycling, reusing, and proper disposal.
     """)
 
     # Mission Section
@@ -21,10 +21,9 @@ def show_about_page():
         st.image("profile.png", use_column_width=True)
         st.markdown("**Vidhi Dhakate** <br> Lead Developer", unsafe_allow_html=True)
     
-
     with col2:
-         st.image("profile.png", use_column_width=True)
-         st.markdown("**Tejas Mahakalkar** <br> Project Manager", unsafe_allow_html=True)
+        st.image("profile.png", use_column_width=True)
+        st.markdown("**Tejas Mahakalkar** <br> Project Manager", unsafe_allow_html=True)
 
     with col3:
         st.image("profile.png", use_column_width=True)
@@ -32,14 +31,13 @@ def show_about_page():
 
     # Future Work Section
     st.subheader("Future Work")
-   st.markdown("""
-- **Real-Time Feedback**: Provide instant feedback on recycling efforts.
-- **Expand Categories**: Add more waste categories for accurate identification.
-- **Community Engagement**: Enable sharing of recycling tips and challenges.
-- **Gamification**: Introduce rewards to boost user participation.
-- **Educational Resources**: Offer articles on sustainability to enhance awareness.
-""")
-
+    st.markdown("""
+    - **Real-Time Feedback**: Provide instant feedback on recycling efforts.
+    - **Expand Categories**: Add more waste categories for accurate identification.
+    - **Community Engagement**: Enable sharing of recycling tips and challenges.
+    - **Gamification**: Introduce rewards to boost user participation.
+    - **Educational Resources**: Offer articles on sustainability to enhance awareness.
+    """)
 
     # Call to Action Section
     st.subheader("Join Us")
